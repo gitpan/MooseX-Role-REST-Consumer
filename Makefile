@@ -20,7 +20,7 @@
 #     META_MERGE => { dynamic_config=>q[0] }
 #     NAME => q[MooseX-Role-REST-Consumer]
 #     PL_FILES => {  }
-#     PREREQ_PM => { Try::Tiny=>q[0], Test::Exception=>q[0], Test::Easy=>q[1.09], ExtUtils::MakeMaker=>q[0], REST::Consumer=>q[0], ExtUtils::MakeMaker::CPANfile=>q[0], MooseX::Role::Parameterized=>q[0], WWW::Curl::UserAgent=>q[0], Moose=>q[0] }
+#     PREREQ_PM => { Try::Tiny=>q[0], Test::Exception=>q[0], Test::Easy=>q[1.09], ExtUtils::MakeMaker=>q[0], REST::Consumer=>q[1.02], ExtUtils::MakeMaker::CPANfile=>q[0], MooseX::Role::Parameterized=>q[0], WWW::Curl::UserAgent=>q[0], Moose=>q[0] }
 #     VERSION_FROM => q[lib/MooseX/Role/REST/Consumer.pm]
 #     clean => { FILES=>q[MooseX-Role-REST-Consumer-*] }
 #     dist => { COMPRESS=>q[gzip -9f], SUFFIX=>q[gz] }
@@ -62,11 +62,11 @@ DIRFILESEP = /
 DFSEP = $(DIRFILESEP)
 NAME = MooseX-Role-REST-Consumer
 NAME_SYM = MooseX_Role_REST_Consumer
-VERSION = 0.001
+VERSION = 0.002
 VERSION_MACRO = VERSION
-VERSION_SYM = 0_001
+VERSION_SYM = 0_002
 DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
-XS_VERSION = 0.001
+XS_VERSION = 0.002
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
 INST_ARCHLIB = blib/arch
@@ -269,7 +269,7 @@ RCS_LABEL = rcs -Nv$(VERSION_SYM): -q
 DIST_CP = best
 DIST_DEFAULT = tardist
 DISTNAME = MooseX-Role-REST-Consumer
-DISTVNAME = MooseX-Role-REST-Consumer-0.001
+DISTVNAME = MooseX-Role-REST-Consumer-0.002
 
 
 # --- MakeMaker macro section:
@@ -518,12 +518,12 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '  ExtUtils::MakeMaker::CPANfile: '\''0'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) '  Moose: '\''0'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) '  MooseX::Role::Parameterized: '\''0'\''' >> META_new.yml
-	$(NOECHO) $(ECHO) '  REST::Consumer: '\''0'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) '  REST::Consumer: '\''1.02'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) '  Test::Easy: '\''1.09'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) '  Test::Exception: '\''0'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) '  Try::Tiny: '\''0'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) '  WWW::Curl::UserAgent: '\''0'\''' >> META_new.yml
-	$(NOECHO) $(ECHO) 'version: '\''0.001'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) 'version: '\''0.002'\''' >> META_new.yml
 	-$(NOECHO) $(MV) META_new.yml $(DISTVNAME)/META.yml
 	$(NOECHO) $(ECHO) Generating META.json
 	$(NOECHO) $(ECHO) '{' > META_new.json
@@ -564,7 +564,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '            "ExtUtils::MakeMaker::CPANfile" : "0",' >> META_new.json
 	$(NOECHO) $(ECHO) '            "Moose" : "0",' >> META_new.json
 	$(NOECHO) $(ECHO) '            "MooseX::Role::Parameterized" : "0",' >> META_new.json
-	$(NOECHO) $(ECHO) '            "REST::Consumer" : "0",' >> META_new.json
+	$(NOECHO) $(ECHO) '            "REST::Consumer" : "1.02",' >> META_new.json
 	$(NOECHO) $(ECHO) '            "Test::Easy" : "1.09",' >> META_new.json
 	$(NOECHO) $(ECHO) '            "Test::Exception" : "0",' >> META_new.json
 	$(NOECHO) $(ECHO) '            "Try::Tiny" : "0",' >> META_new.json
@@ -573,7 +573,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '      }' >> META_new.json
 	$(NOECHO) $(ECHO) '   },' >> META_new.json
 	$(NOECHO) $(ECHO) '   "release_status" : "stable",' >> META_new.json
-	$(NOECHO) $(ECHO) '   "version" : "0.001"' >> META_new.json
+	$(NOECHO) $(ECHO) '   "version" : "0.002"' >> META_new.json
 	$(NOECHO) $(ECHO) '}' >> META_new.json
 	-$(NOECHO) $(MV) META_new.json $(DISTVNAME)/META.json
 
@@ -877,7 +877,7 @@ ppd :
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="ExtUtils::MakeMaker::CPANfile" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Moose::" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="MooseX::Role::Parameterized" />' >> $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) '        <REQUIRE NAME="REST::Consumer" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="REST::Consumer" VERSION="1.02" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Test::Easy" VERSION="1.09" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Test::Exception" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Try::Tiny" />' >> $(DISTNAME).ppd

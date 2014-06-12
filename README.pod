@@ -11,7 +11,7 @@ use Try::Tiny;
 use URI::Escape;
 use Module::Load;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 my @HTTP_METHODS = qw(get put post delete);
 
@@ -157,8 +157,8 @@ role {
       my $is_success;
       try {
         $try++;
-        $data          = $consumer->$method(%request);
-        $is_success    = 1;
+        $data       = $consumer->$method(%request);
+        $is_success = 1;
       } catch {
         $error = $_;
         $timeout_error++ if $error =~ /read timeout/;
