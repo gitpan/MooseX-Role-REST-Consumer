@@ -27,4 +27,4 @@ requires:
   Test::Exception: '0'
   Try::Tiny: '0'
   WWW::Curl::UserAgent: '0'
-version: '0.002'
+version: '0.003'
